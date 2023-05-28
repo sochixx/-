@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -282,6 +282,13 @@ int main()
                 cout << "3. Решение квадратного уравнения\n\nВведите коэффициенты a, b, c через пробел (резделитель дробной части - точка): ";
                 double a, b, c;
                 cin >> a >> b >> c;
+                if (cin.fail())
+                {
+                    cout << "Ошибка ввода. Повторите ещё раз\n";
+                    cin.clear();
+                    cin.ignore(10000, '\n');
+                    continue;
+                }
                 if (a != 0)
                 {
                     if (b != 0)
