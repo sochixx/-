@@ -218,7 +218,18 @@ int main()
         string abc;
         cout << "\tМЕНЮ\n1. Типы квадртаных уравнений\n2. Некоторые методы решения квадртаного уравнения и их сравнение\n3. Решение квадратного уравнения\n4. Выход из программы" << endl;
         cout << "Выберите пункт меню: ";
-        cin >> point;
+        cin >> abc;
+        try
+        {
+            temp = stoi(abc);
+            point = temp;
+            temp = 1;
+        }
+        catch (const exception& e)
+        {
+            cerr << "Ошибка: " << e.what() << endl;
+            point = 5;
+        }
         system("cls");
         switch (point)
         {
